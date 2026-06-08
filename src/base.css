@@ -585,8 +585,9 @@ html.lenis, html.lenis body { height: auto; }
   background: linear-gradient(180deg, rgba(124,92,255,.08), rgba(10,7,22,.35)); }
 @media (max-width: 760px) { .collage__item { width: 210px; } .hero-collage { margin-top: 44px; } }
 
-/* — work card subheading — */
-.work-card__sub { color: var(--muted); font-size: .9rem; margin: -4px 0 14px; }
+/* — work card subheading + description — */
+.work-card__sub { color: var(--accent-3); font-size: .9rem; margin: -4px 0 10px; font-weight: 500; }
+.work-card__desc { color: var(--muted); font-size: .88rem; line-height: 1.6; margin: 0 0 14px; }
 
 /* ============================================================
    Hero background — faded design screenshots montage

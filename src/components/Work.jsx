@@ -9,16 +9,23 @@ const PROJECTS = [
 
 const LOGOS = [
   { img: '/logo/anaira-wordmark.png', title: 'Anaira — Brand Identity', sub: 'Logotype & visual identity system', tags: ['Branding', 'Logo', 'Identity'] },
-  { img: '/logo/anaira-mark.png', title: 'Zyps — Startup Logo', sub: 'Minimal startup brand mark', tags: ['Logo Design', 'Icon', 'Brand Mark'] },
+  {
+    img: '/logo/anaira-mark.png',
+    title: 'ZYPHC — Smart Canteen App',
+    sub: 'I worked as a UI/UX Designer — from logo to complete app UI design.',
+    desc: 'A smart canteen app for college campuses that makes food ordering easier for students and helps canteen owners manage operations. Students browse menus, track live orders, pay via UPI and unlock rewards — while owners manage dishes, accept/reject orders, track sales and mark stock levels.',
+    tags: ['Mobile App', 'UI/UX', 'Logo & Branding'],
+  },
 ]
 
-function Card({ children, title, sub, tags, delay }) {
+function Card({ children, title, sub, desc, tags, delay }) {
   return (
     <Reveal as="article" className="work-card" delay={delay}>
       {children}
       <div className="work-card__meta">
         <h3>{title}</h3>
         {sub && <p className="work-card__sub">{sub}</p>}
+        {desc && <p className="work-card__desc">{desc}</p>}
         <div className="tags">{tags.map((t) => <span key={t}>{t}</span>)}</div>
       </div>
     </Reveal>
@@ -43,7 +50,7 @@ export default function Work() {
           </Card>
         ))}
         {LOGOS.map((l, i) => (
-          <Card key={l.title} title={l.title} sub={l.sub} tags={l.tags} delay={(PROJECTS.length + i) * 80}>
+          <Card key={l.title} title={l.title} sub={l.sub} desc={l.desc} tags={l.tags} delay={(PROJECTS.length + i) * 80}>
             <div className="work-card__shot work-card__shot--logo">
               <img src={l.img} alt={l.title} loading="lazy" />
             </div>
