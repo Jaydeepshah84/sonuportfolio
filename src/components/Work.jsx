@@ -2,23 +2,23 @@ import Reveal from './Reveal'
 import Magnetic from './Magnetic'
 
 const PROJECTS = [
-  { img: '/assets/work/w1.jpg', title: 'SaaS Analytics Dashboard', tags: ['Dashboard', 'SaaS', 'Web App'] },
-  { img: '/assets/work/w4.jpg', title: 'Marketing Website', tags: ['Website', 'Landing', 'Branding'] },
-  { img: '/assets/work/w2.jpg', title: 'Data Reporting Tool', tags: ['Dashboard', 'Data', 'UX'] },
-  { img: '/assets/work/w3.jpg', title: 'E-Learning Platform', tags: ['Website', 'EdTech', 'UI'] },
+  { img: '/assets/work/w1.jpg', title: 'SaaS Analytics Dashboard', sub: 'Real-time metrics & reporting interface', tags: ['Dashboard', 'SaaS', 'Web App'] },
+  { img: '/assets/work/w4.jpg', title: 'Marketing Website', sub: 'Conversion-focused landing experience', tags: ['Website', 'Landing', 'Branding'] },
+  { img: '/assets/work/w3.jpg', title: 'E-Learning Platform', sub: 'Course discovery & learning UI', tags: ['Website', 'EdTech', 'UI'] },
 ]
 
 const LOGOS = [
-  { img: '/logo/anaira-wordmark.png', title: 'Anaira — Brand Identity', tags: ['Branding', 'Logo', 'Identity'] },
-  { img: '/logo/anaira-mark.png', title: 'Zyps — Startup Logo', tags: ['Logo Design', 'Icon', 'Brand Mark'] },
+  { img: '/logo/anaira-wordmark.png', title: 'Anaira — Brand Identity', sub: 'Logotype & visual identity system', tags: ['Branding', 'Logo', 'Identity'] },
+  { img: '/logo/anaira-mark.png', title: 'Zyps — Startup Logo', sub: 'Minimal startup brand mark', tags: ['Logo Design', 'Icon', 'Brand Mark'] },
 ]
 
-function Card({ children, title, tags, delay }) {
+function Card({ children, title, sub, tags, delay }) {
   return (
     <Reveal as="article" className="work-card" delay={delay}>
       {children}
       <div className="work-card__meta">
         <h3>{title}</h3>
+        {sub && <p className="work-card__sub">{sub}</p>}
         <div className="tags">{tags.map((t) => <span key={t}>{t}</span>)}</div>
       </div>
     </Reveal>
@@ -36,14 +36,14 @@ export default function Work() {
 
       <div className="work__grid">
         {PROJECTS.map((p, i) => (
-          <Card key={p.title} title={p.title} tags={p.tags} delay={i * 80}>
+          <Card key={p.title} title={p.title} sub={p.sub} tags={p.tags} delay={i * 80}>
             <div className="work-card__shot">
               <img src={p.img} alt={p.title} loading="lazy" />
             </div>
           </Card>
         ))}
         {LOGOS.map((l, i) => (
-          <Card key={l.title} title={l.title} tags={l.tags} delay={(PROJECTS.length + i) * 80}>
+          <Card key={l.title} title={l.title} sub={l.sub} tags={l.tags} delay={(PROJECTS.length + i) * 80}>
             <div className="work-card__shot work-card__shot--logo">
               <img src={l.img} alt={l.title} loading="lazy" />
             </div>

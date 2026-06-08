@@ -3,19 +3,16 @@ import Reveal, { staggerContainer, staggerItem } from './Reveal'
 
 const ITEMS = [
   {
-    photo: '/assets/people/p1.jpg',
-    quote: 'Sonu redesigned our dashboard and the difference was night and day. Cleaner, faster, and our users actually understand it now.',
-    name: 'Ankit Verma', role: 'Founder · FinStack',
+    quote: 'Sonu redesigned our dashboard and the difference was night and day. Cleaner, faster, and our users actually understand it now. A rare designer who thinks in data.',
+    name: 'Ankit Verma', role: 'Founder · FinStack', a: '#7c5cff', b: '#e879f9', initial: 'A',
   },
   {
-    photo: '/assets/people/p2.jpg',
-    quote: 'From wireframes to handoff, everything was organised and pixel-perfect. One of the smoothest design collaborations we\'ve had.',
-    name: 'Priya Nair', role: 'Product Lead · Bloom',
+    quote: 'From wireframes to handoff, everything was organised and pixel-perfect. Our dev team barely had questions — one of the smoothest collaborations we\'ve had.',
+    name: 'Priya Nair', role: 'Product Lead · Bloom', a: '#5ee0ff', b: '#7c5cff', initial: 'P',
   },
   {
-    photo: '/assets/people/p3.jpg',
-    quote: 'He gets startups. Fast, thoughtful, and invested in the outcome. The new app UI directly lifted our onboarding completion.',
-    name: 'Rahul Mehta', role: 'CEO · QuickServe',
+    quote: 'He gets startups. Fast, thoughtful, and genuinely invested in the outcome. The new app UI directly lifted our onboarding completion. Highly recommend.',
+    name: 'Rahul Mehta', role: 'CEO · QuickServe', a: '#e879f9', b: '#ff8a5c', initial: 'R',
   },
 ]
 
@@ -36,17 +33,11 @@ export default function Testimonials() {
       >
         {ITEMS.map((t) => (
           <motion.article className="tcard glass-card" variants={staggerItem} key={t.name}>
-            <div className="tcard__media">
-              <img src={t.photo} alt={t.name} loading="lazy" />
-              <button className="tcard__play" aria-label={`Play ${t.name}'s testimonial`}>▶</button>
-              <div className="tcard__namebar">
-                <strong>{t.name}</strong>
-                <small>{t.role}</small>
-              </div>
-            </div>
-            <div className="tcard__body">
-              <div className="tcard__stars">★★★★★</div>
-              <p className="tcard__quote">{t.quote}</p>
+            <div className="tcard__stars">★★★★★</div>
+            <p className="tcard__quote">“{t.quote}”</p>
+            <div className="tcard__person">
+              <span className="tavatar" style={{ '--a': t.a, '--b': t.b }}>{t.initial}</span>
+              <div><strong>{t.name}</strong><small>{t.role}</small></div>
             </div>
           </motion.article>
         ))}

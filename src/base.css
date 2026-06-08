@@ -585,26 +585,8 @@ html.lenis, html.lenis body { height: auto; }
   background: linear-gradient(180deg, rgba(124,92,255,.08), rgba(10,7,22,.35)); }
 @media (max-width: 760px) { .collage__item { width: 210px; } .hero-collage { margin-top: 44px; } }
 
-/* ============================================================
-   Testimonials — photo cards w/ play button (video style)
-   ============================================================ */
-.tcard { padding: 0; overflow: hidden; }
-.tcard__media { position: relative; aspect-ratio: 4 / 3.4; overflow: hidden; }
-.tcard__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
-.tcard:hover .tcard__media img { transform: scale(1.06); }
-.tcard__media::after { content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(10,7,22,.05) 35%, rgba(10,7,22,.85)); }
-.tcard__play { position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%); z-index: 2;
-  width: 56px; height: 56px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5);
-  background: rgba(255,255,255,.18); backdrop-filter: blur(6px); color: #fff; font-size: .9rem;
-  display: grid; place-items: center; cursor: pointer; transition: .3s var(--ease); }
-.tcard__play:hover { background: var(--grad); border-color: transparent; transform: translate(-50%,-50%) scale(1.1); }
-.tcard__namebar { position: absolute; left: 18px; bottom: 14px; z-index: 2; }
-.tcard__namebar strong { display: block; font-family: 'Sora'; font-size: 1rem; color: #fff; }
-.tcard__namebar small { color: rgba(255,255,255,.8); font-size: .82rem; }
-.tcard__body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 12px; }
-.tcard__stars { color: #ffc24b; letter-spacing: 3px; font-size: 1rem; }
-.tcard__quote { color: var(--muted); font-size: .94rem; line-height: 1.6; }
+/* — work card subheading — */
+.work-card__sub { color: var(--muted); font-size: .9rem; margin: -4px 0 14px; }
 
 /* ============================================================
    Hero background — faded design screenshots montage
