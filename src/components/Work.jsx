@@ -8,7 +8,13 @@ const PROJECTS = [
 ]
 
 const LOGOS = [
-  { img: '/logo/anaira-wordmark.png', title: 'Anaira — Brand Identity', sub: 'Logotype & visual identity system', tags: ['Branding', 'Logo', 'Identity'] },
+  {
+    img: '/logo/anaira-wordmark.png',
+    title: 'Anaira — Brand Identity',
+    sub: 'Logo & brand identity for a quiet-luxury clothing label.',
+    desc: 'Anaira is a clothing movement for both men and women — “old money” aesthetics blended with modern, effortless charm. The identity captures timeless elegance, quiet luxury, confidence and grace, carried across refined garments like tailored waistcoats, pleated skirts, baggy trousers and signature dresses.',
+    tags: ['Branding', 'Logo', 'Identity'],
+  },
   {
     img: '/logo/anaira-mark.png',
     title: 'ZYPHC — Smart Canteen App',
