@@ -133,8 +133,8 @@ h1, h2, h3, .nav__logo-text { font-family: 'Sora', sans-serif; letter-spacing: -
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
   max-width: var(--maxw); margin: 0 auto; padding: 22px 28px;
   transition: padding .35s var(--ease); }
-.nav.is-stuck { padding: 12px 28px; left: 50%; transform: translateX(-50%); top: 12px;
-  width: calc(100% - 24px); border: 1px solid var(--border); border-radius: 60px;
+.nav.is-stuck { padding: 12px 28px; top: 12px;
+  border: 1px solid var(--border); border-radius: 60px;
   background: rgba(15,10,34,.72); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
 
 .nav__logo { display: flex; align-items: center; gap: 12px; }
@@ -618,15 +618,8 @@ html.lenis, html.lenis body { height: auto; }
 /* ============================================================
    Brand wordmark (unique logo — replaces SS monogram)
    ============================================================ */
-.brand { display: inline-flex; align-items: center; gap: 9px; }
-.brand__spark { font-size: 1.15rem; line-height: 1; background: var(--grad);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: spark 6s linear infinite; }
-@keyframes spark { to { transform: rotate(360deg); } }
-.brand__text { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.22rem;
-  letter-spacing: -.02em; color: var(--text); text-transform: lowercase; position: relative; }
-.brand__accent { background: var(--grad); -webkit-background-clip: text; background-clip: text;
-  color: transparent; margin-left: 1px; }
-.brand__dot { font-family: 'Inter', sans-serif; font-size: .5rem; font-weight: 600;
-  color: var(--accent-2); top: -.9em; margin-left: 2px; }
-.brand:hover .brand__spark { animation-duration: 1.4s; }
+.brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem;
+  letter-spacing: -.01em; color: var(--text); line-height: 1; white-space: nowrap;
+  transition: opacity .3s var(--ease); }
+.brand:hover { opacity: .85; }
+.brand__accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }

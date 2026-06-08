@@ -4,9 +4,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <a href="#home" className="nav__logo brand">
-          <span className="brand__spark">✳</span>
-          <span className="brand__text">sonu<span className="brand__accent">singh</span><sup className="brand__dot">®</sup></span>
+        <a href="#home" className="brand">
+          Sonu <span className="brand__accent">Singh</span>
         </a>
         <p>UI/UX Designer · Product Designer · Data-Informed</p>
         <div className="footer__socials">

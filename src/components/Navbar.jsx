@@ -45,9 +45,8 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <a href="#home" className="nav__logo brand" onClick={() => setOpen(false)}>
-        <span className="brand__spark">✳</span>
-        <span className="brand__text">sonu<span className="brand__accent">singh</span><sup className="brand__dot">®</sup></span>
+      <a href="#home" className="brand" onClick={() => setOpen(false)}>
+        Sonu <span className="brand__accent">Singh</span>
       </a>
 
       <nav className="nav__links">
