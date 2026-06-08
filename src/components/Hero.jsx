@@ -60,12 +60,17 @@ export default function Hero() {
           <motion.div className="hero__cta" variants={item}>
             <Magnetic><a href="#connect" className="btn btn--primary">Hire Me</a></Magnetic>
             <Magnetic>
-              <a href="#work" className="btn btn--ghost">
+              <a
+                href="https://drive.google.com/file/d/1q5duWAXx00vAlUNeI27VjLg6x7j4Nb-x/view?usp=sharing"
+                className="btn btn--ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg className="dribbble" viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.6" />
                   <path d="M5 7c3.5 3 9 4.5 14 3.5M3.5 14c4-1.5 9-1 12.5 2.5M9 3c3 3.5 5.5 8.5 6 17" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
                 </svg>
-                Latest Work
+                View My Work
               </a>
             </Magnetic>
           </motion.div>

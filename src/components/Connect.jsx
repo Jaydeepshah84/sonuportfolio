@@ -24,7 +24,7 @@ export default function Connect() {
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterested in: ${interested}\n\n${form.msg}`
     )
     setNote({ text: 'Opening your email client…', ok: true })
-    window.location.href = `mailto:sonu@example.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:sonu.singh201104@gmail.com?subject=${subject}&body=${body}`
     setTimeout(() => {
       setForm({ name: '', email: '', phone: '', msg: '' })
       setChips({ 'UI/UX Design': true })
@@ -40,9 +40,8 @@ export default function Connect() {
           <h2 className="section__title">Let's design something<br /><span className="grad-text">users love.</span></h2>
           <p>Have a product idea, a redesign in mind, or a flow that needs polish? Drop a line — I reply fast.</p>
           <ul className="connect__contacts">
-            <li><span className="c-ico"><Icon id="i-mail" /></span> <a href="mailto:sonu@example.com">sonu@example.com</a></li>
-            <li><span className="c-ico"><Icon id="i-pin" /></span> India</li>
-            <li><span className="c-ico"><Icon id="i-linkedin" /></span> <a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><span className="c-ico"><Icon id="i-mail" /></span> <a href="mailto:sonu.singh201104@gmail.com">sonu.singh201104@gmail.com</a></li>
+            <li><span className="c-ico"><Icon id="i-mobile" /></span> <a href="tel:+919997690954">+91 99976 90954</a></li>
           </ul>
         </Reveal>
 
