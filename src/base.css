@@ -129,28 +129,26 @@ h1, h2, h3, .nav__logo-text { font-family: 'Sora', sans-serif; letter-spacing: -
 /* ============================================================
    Navbar
    ============================================================ */
+/* full-width bar */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  transition: background .35s var(--ease), border-color .35s, box-shadow .35s; border-bottom: 1px solid transparent; }
+.nav__inner { max-width: var(--maxw); margin: 0 auto; padding: 20px 28px;
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  max-width: var(--maxw); margin: 0 auto; padding: 22px 28px;
   transition: padding .35s var(--ease); }
-.nav.is-stuck { padding: 12px 28px; top: 12px;
-  border: 1px solid var(--border); border-radius: 60px;
-  background: rgba(15,10,34,.72); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
+.nav.is-stuck { background: rgba(10,7,22,.72); backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom-color: var(--border); box-shadow: 0 10px 40px -24px rgba(0,0,0,.8); }
+.nav.is-stuck .nav__inner { padding: 13px 28px; }
+.nav__right { display: flex; align-items: center; gap: 14px; }
 
 .nav__logo { display: flex; align-items: center; gap: 12px; }
-.nav__logo-mark { width: 38px; height: 38px; display: grid; place-items: center;
-  border-radius: 11px; background: var(--grad); font-family: 'Sora'; font-weight: 800;
-  font-size: .95rem; color: #fff; box-shadow: 0 8px 20px -6px rgba(124,92,255,.8); }
-.nav__logo-text { font-size: 1rem; font-weight: 500; letter-spacing: .12em; color: var(--muted); }
-.nav__logo-text strong { color: var(--text); margin-left: 3px; }
 
-.nav__links { display: flex; gap: 6px; }
-.nav__link { font-size: .92rem; color: var(--muted); padding: 8px 15px; border-radius: 30px;
-  position: relative; transition: color .25s; }
-.nav__link:hover { color: var(--text); }
+.nav__links { display: flex; gap: 4px; }
+.nav__link { font-size: .92rem; color: var(--muted); padding: 9px 16px; border-radius: 30px;
+  position: relative; transition: color .25s, background .25s; }
+.nav__link:hover { color: var(--text); background: var(--surface); }
 .nav__link.is-active { color: var(--text); }
-.nav__link.is-active::after { content: ''; position: absolute; bottom: 1px; left: 50%; transform: translateX(-50%);
-  width: 18px; height: 3px; border-radius: 3px; background: var(--grad); }
+.nav__link.is-active::after { content: ''; position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
+  width: 16px; height: 3px; border-radius: 3px; background: var(--grad); }
 
 .nav__burger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__burger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s var(--ease); }
@@ -521,11 +519,22 @@ h1, h2, h3, .nav__logo-text { font-family: 'Sora', sans-serif; letter-spacing: -
 }
 
 @media (max-width: 760px) {
-  .nav__links { position: fixed; inset: 0 0 0 auto; width: min(78%,320px); flex-direction: column;
-    justify-content: center; gap: 18px; padding: 40px; background: rgba(12,8,28,.96); backdrop-filter: blur(20px);
-    transform: translateX(100%); transition: transform .4s var(--ease); z-index: 850; }
-  .nav.menu-open .nav__links { transform: translateX(0); }
-  .nav__link { font-size: 1.2rem; }
+  .nav__links { position: fixed; inset: 0; width: 100%; flex-direction: column;
+    justify-content: center; align-items: center; gap: 8px; padding: 40px;
+    background: radial-gradient(120% 90% at 80% 0%, #1a1140, rgba(8,5,20,.98));
+    backdrop-filter: blur(24px); opacity: 0; visibility: hidden;
+    transition: opacity .4s var(--ease), visibility .4s; z-index: 850; }
+  .nav.menu-open .nav__links { opacity: 1; visibility: visible; }
+  .nav__link { font-size: 1.9rem; font-family: 'Sora', sans-serif; font-weight: 600;
+    padding: 12px 24px; opacity: 0; transform: translateY(14px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+  .nav.menu-open .nav__link { opacity: 1; transform: none; }
+  .nav.menu-open .nav__link:nth-child(1) { transition-delay: .08s; }
+  .nav.menu-open .nav__link:nth-child(2) { transition-delay: .14s; }
+  .nav.menu-open .nav__link:nth-child(3) { transition-delay: .20s; }
+  .nav.menu-open .nav__link:nth-child(4) { transition-delay: .26s; }
+  .nav.menu-open .nav__link:nth-child(5) { transition-delay: .32s; }
+  .nav.menu-open .nav__link:nth-child(6) { transition-delay: .38s; }
+  .nav__link.is-active::after { display: none; }
   .nav__burger { display: flex; z-index: 860; }
   .nav .btn--pill { display: none; }
   .section { padding: 80px 22px; }
@@ -624,3 +633,71 @@ html.lenis, html.lenis body { height: auto; }
 .brand:hover { opacity: .8; }
 .brand__accent { font-weight: 500; background: var(--grad);
   -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ============================================================
+   UI POLISH PASS — refined cards, buttons, spacing, details
+   ============================================================ */
+
+/* — Section rhythm & headings — */
+.section { padding: 120px 28px; }
+.section__title { font-weight: 700; letter-spacing: -.03em; }
+.section__lead { max-width: 580px; margin-left: auto; margin-right: auto; }
+.eyebrow { font-weight: 500; box-shadow: inset 0 1px 0 rgba(255,255,255,.04); }
+
+/* — Refined glass cards (subtle top highlight + richer hover) — */
+.glass-card { background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
+.glass-card:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,.09), var(--shadow); }
+
+/* — Ghost button: gradient border on hover — */
+.btn--ghost { position: relative; }
+.btn--ghost::before { content: ''; position: absolute; inset: 0; border-radius: 40px; padding: 1px;
+  background: var(--grad); opacity: 0; transition: opacity .3s var(--ease);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; }
+.btn--ghost:hover { border-color: transparent; background: var(--surface-2); }
+.btn--ghost:hover::before { opacity: 1; }
+
+/* — Primary button sheen — */
+.btn--primary { background-size: 140% 140%; transition: transform .3s var(--ease), box-shadow .3s, background-position .5s; }
+.btn--primary:hover { background-position: 100% 0; }
+
+/* — Hero stats with dividers — */
+.hero__stats { gap: 0; }
+.hero__stat { padding: 0 28px; border-left: 1px solid var(--border); }
+.hero__stat:first-child { border-left: 0; padding-left: 0; }
+.hero__bg { opacity: .12; }
+
+/* — Work card: hover "view" badge + stronger lift — */
+.work-card { border-radius: 20px; }
+.work-card__shot:not(.work-card__shot--logo)::before { content: '↗'; position: absolute; top: 14px; right: 14px;
+  z-index: 4; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--grad); color: #fff; font-size: 1.15rem; box-shadow: var(--shadow);
+  transform: scale(.5); opacity: 0; transition: transform .45s var(--ease), opacity .45s; }
+.work-card:hover .work-card__shot:not(.work-card__shot--logo)::before { transform: scale(1); opacity: 1; }
+.work-card__meta h3 { transition: color .3s; }
+.work-card:hover .work-card__meta h3 { color: var(--accent-3); }
+
+/* — Marquee refinement — */
+.marquee { background: linear-gradient(90deg, transparent, var(--surface), transparent); }
+.marquee__track span { color: var(--muted-2); transition: color .3s; }
+.marquee:hover .marquee__track span { color: var(--accent-3); }
+
+/* — Pills / tags — */
+.pill, .tags span { transition: border-color .3s, color .3s, background .3s; }
+.pill:hover { border-color: var(--accent); color: #fff; }
+
+/* — Service rows: rounded hover + larger tap target — */
+.service { border-radius: 16px; }
+
+/* — Footer: gradient hairline + spacing — */
+.footer { border-top: none; position: relative; }
+.footer::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-2), transparent); }
+
+/* — Section connective gradient lines between major blocks — */
+.skills, .tools, .testimonials { position: relative; }
+
+/* — Smoother focus rings for accessibility — */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 8px; }

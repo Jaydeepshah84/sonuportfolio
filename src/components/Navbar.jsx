@@ -45,30 +45,33 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <a href="#home" className="brand" onClick={() => setOpen(false)}>
-        Sonu <span className="brand__accent">Singh</span>
-      </a>
+      <div className="nav__inner">
+        <a href="#home" className="brand" onClick={() => setOpen(false)}>
+          Sonu <span className="brand__accent">Singh</span>
+        </a>
 
-      <nav className="nav__links">
-        {LINKS.map(([href, label]) => (
-          <a
-            key={href}
-            href={href}
-            className={`nav__link${active === href ? ' is-active' : ''}`}
-            onClick={() => setOpen(false)}
-          >
-            {label}
+        <nav className="nav__links">
+          {LINKS.map(([href, label]) => (
+            <a
+              key={href}
+              href={href}
+              className={`nav__link${active === href ? ' is-active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="nav__right">
+          <a href="#connect" className="btn btn--pill">
+            Let's Work <span className="btn__arrow">↗</span>
           </a>
-        ))}
-      </nav>
-
-      <a href="#connect" className="btn btn--pill">
-        Let's Work <span className="btn__arrow">↗</span>
-      </a>
-
-      <button className="nav__burger" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
-        <span /><span /><span />
-      </button>
+          <button className="nav__burger" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
+            <span /><span /><span />
+          </button>
+        </div>
+      </div>
     </motion.header>
   )
 }
