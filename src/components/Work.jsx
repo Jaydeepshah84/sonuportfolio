@@ -2,7 +2,14 @@ import Reveal from './Reveal'
 import Magnetic from './Magnetic'
 
 const PROJECTS = [
-  { img: '/assets/work/w4.jpg', title: 'Marketing Website', sub: 'Conversion-focused landing experience', tags: ['Website', 'Landing', 'Branding'] },
+  {
+    img: '/assets/work/w4.jpg',
+    title: 'Dreamreach Marketing',
+    sub: 'Brand & digital marketing for an India-based startup.',
+    desc: 'Dreamreach Marketing is a startup based in India, committed to delivering meaningful and creative business solutions. Leveraging diverse expertise in marketing and industry knowledge, it blends professionalism with a personalized approach to support clients’ growth — building lasting partnerships by tailoring services to each client’s unique goals with sincerity and dedication.',
+    link: 'https://drive.google.com/file/d/1MLA2Jnc0_VacgzF0CH68cpUNFXK19t6x/view?usp=sharing',
+    tags: ['Digital Marketing', 'Branding', 'Strategy'],
+  },
   {
     img: '/assets/work/w3.jpg',
     title: 'E-Learning Platform',
@@ -29,9 +36,9 @@ const LOGOS = [
   },
 ]
 
-function Card({ children, title, sub, desc, tags, delay }) {
+function Card({ children, title, sub, desc, tags, delay, link }) {
   return (
-    <Reveal as="article" className="work-card" delay={delay}>
+    <Reveal as="article" className={`work-card${link ? ' is-link' : ''}`} delay={delay}>
       {children}
       <div className="work-card__meta">
         <h3>{title}</h3>
@@ -39,6 +46,15 @@ function Card({ children, title, sub, desc, tags, delay }) {
         {desc && <p className="work-card__desc">{desc}</p>}
         <div className="tags">{tags.map((t) => <span key={t}>{t}</span>)}</div>
       </div>
+      {link && (
+        <a
+          className="work-card__link"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${title}`}
+        />
+      )}
     </Reveal>
   )
 }
@@ -54,14 +70,14 @@ export default function Work() {
 
       <div className="work__grid">
         {PROJECTS.map((p, i) => (
-          <Card key={p.title} title={p.title} sub={p.sub} desc={p.desc} tags={p.tags} delay={i * 80}>
+          <Card key={p.title} title={p.title} sub={p.sub} desc={p.desc} tags={p.tags} link={p.link} delay={i * 80}>
             <div className="work-card__shot">
               <img src={p.img} alt={p.title} loading="lazy" />
             </div>
           </Card>
         ))}
         {LOGOS.map((l, i) => (
-          <Card key={l.title} title={l.title} sub={l.sub} desc={l.desc} tags={l.tags} delay={(PROJECTS.length + i) * 80}>
+          <Card key={l.title} title={l.title} sub={l.sub} desc={l.desc} tags={l.tags} link={l.link} delay={(PROJECTS.length + i) * 80}>
             <div className="work-card__shot work-card__shot--logo">
               <img src={l.img} alt={l.title} loading="lazy" />
             </div>

@@ -574,6 +574,10 @@ html.lenis, html.lenis body { height: auto; }
 .work-card__sub { color: var(--accent-3); font-size: .9rem; margin: -4px 0 10px; font-weight: 500; }
 .work-card__desc { color: var(--muted); font-size: .88rem; line-height: 1.6; margin: 0 0 14px; }
 
+/* — clickable work card (whole card opens link) — */
+.work-card.is-link { position: relative; cursor: pointer; }
+.work-card__link { position: absolute; inset: 0; z-index: 6; }
+
 /* ============================================================
    Hero background — faded design screenshots montage
    ============================================================ */
