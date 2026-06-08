@@ -618,8 +618,9 @@ html.lenis, html.lenis body { height: auto; }
 /* ============================================================
    Brand wordmark (unique logo — replaces SS monogram)
    ============================================================ */
-.brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem;
-  letter-spacing: -.01em; color: var(--text); line-height: 1; white-space: nowrap;
-  transition: opacity .3s var(--ease); }
-.brand:hover { opacity: .85; }
-.brand__accent { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.05rem;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--text); line-height: 1;
+  white-space: nowrap; transition: opacity .3s var(--ease); }
+.brand:hover { opacity: .8; }
+.brand__accent { font-weight: 500; background: var(--grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
