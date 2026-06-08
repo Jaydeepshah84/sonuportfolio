@@ -130,7 +130,7 @@ h1, h2, h3, .nav__logo-text { font-family: 'Sora', sans-serif; letter-spacing: -
    Navbar
    ============================================================ */
 /* full-width bar */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
   transition: background .35s var(--ease), border-color .35s, box-shadow .35s; border-bottom: 1px solid transparent; }
 .nav__inner { max-width: var(--maxw); margin: 0 auto; padding: 20px 28px;
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
@@ -519,23 +519,8 @@ h1, h2, h3, .nav__logo-text { font-family: 'Sora', sans-serif; letter-spacing: -
 }
 
 @media (max-width: 760px) {
-  .nav__links { position: fixed; inset: 0; width: 100%; flex-direction: column;
-    justify-content: center; align-items: center; gap: 8px; padding: 40px;
-    background: radial-gradient(120% 90% at 80% 0%, #1a1140, rgba(8,5,20,.98));
-    backdrop-filter: blur(24px); opacity: 0; visibility: hidden;
-    transition: opacity .4s var(--ease), visibility .4s; z-index: 850; }
-  .nav.menu-open .nav__links { opacity: 1; visibility: visible; }
-  .nav__link { font-size: 1.9rem; font-family: 'Sora', sans-serif; font-weight: 600;
-    padding: 12px 24px; opacity: 0; transform: translateY(14px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
-  .nav.menu-open .nav__link { opacity: 1; transform: none; }
-  .nav.menu-open .nav__link:nth-child(1) { transition-delay: .08s; }
-  .nav.menu-open .nav__link:nth-child(2) { transition-delay: .14s; }
-  .nav.menu-open .nav__link:nth-child(3) { transition-delay: .20s; }
-  .nav.menu-open .nav__link:nth-child(4) { transition-delay: .26s; }
-  .nav.menu-open .nav__link:nth-child(5) { transition-delay: .32s; }
-  .nav.menu-open .nav__link:nth-child(6) { transition-delay: .38s; }
-  .nav__link.is-active::after { display: none; }
-  .nav__burger { display: flex; z-index: 860; }
+  .nav__links--desktop { display: none; }
+  .nav__burger { display: flex; }
   .nav .btn--pill { display: none; }
   .section { padding: 80px 22px; }
   .timeline__points { grid-template-columns: 1fr; }
@@ -684,3 +669,29 @@ html.lenis, html.lenis body { height: auto; }
 /* — Smoother focus rings for accessibility — */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 8px; }
+
+/* ============================================================
+   Full-screen mobile menu overlay (outside transformed header)
+   ============================================================ */
+.nav__overlay { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 6px; padding: 90px 32px 48px;
+  background: radial-gradient(130% 90% at 80% 0%, #1c1346, rgba(8,5,20,.99));
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .4s var(--ease), visibility .4s; }
+.nav__overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+.nav__overlay-links { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.nav__overlay-links a { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 2rem;
+  color: var(--muted); padding: 10px 24px; line-height: 1.5;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease), color .25s; }
+.nav__overlay-links a.is-active, .nav__overlay-links a:hover { color: var(--text); }
+.nav__overlay.is-open .nav__overlay-links a { opacity: 1; transform: none; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(1) { transition-delay: .06s; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(2) { transition-delay: .11s; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(3) { transition-delay: .16s; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(4) { transition-delay: .21s; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(5) { transition-delay: .26s; }
+.nav__overlay.is-open .nav__overlay-links a:nth-child(6) { transition-delay: .31s; }
+.nav__overlay-foot { margin-top: 34px; opacity: 0; transition: opacity .5s .34s; }
+.nav__overlay.is-open .nav__overlay-foot { opacity: 1; }
+@media (min-width: 761px) { .nav__overlay { display: none; } }
