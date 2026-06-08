@@ -2,7 +2,6 @@ import Reveal from './Reveal'
 import Magnetic from './Magnetic'
 
 const PROJECTS = [
-  { img: '/assets/work/w1.jpg', title: 'SaaS Analytics Dashboard', sub: 'Real-time metrics & reporting interface', tags: ['Dashboard', 'SaaS', 'Web App'] },
   { img: '/assets/work/w4.jpg', title: 'Marketing Website', sub: 'Conversion-focused landing experience', tags: ['Website', 'Landing', 'Branding'] },
   {
     img: '/assets/work/w3.jpg',
