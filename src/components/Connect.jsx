@@ -42,6 +42,7 @@ export default function Connect() {
           <ul className="connect__contacts">
             <li><span className="c-ico"><Icon id="i-mail" /></span> <a href="mailto:sonu.singh201104@gmail.com">sonu.singh201104@gmail.com</a></li>
             <li><span className="c-ico"><Icon id="i-mobile" /></span> <a href="tel:+919997690954">+91 99976 90954</a></li>
+            <li><span className="c-ico"><Icon id="i-linkedin" /></span> <a href="https://www.linkedin.com/in/sonu-singh-52a2a5273/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sonu-singh</a></li>
           </ul>
         </Reveal>
 
