@@ -4,7 +4,13 @@ import Magnetic from './Magnetic'
 const PROJECTS = [
   { img: '/assets/work/w1.jpg', title: 'SaaS Analytics Dashboard', sub: 'Real-time metrics & reporting interface', tags: ['Dashboard', 'SaaS', 'Web App'] },
   { img: '/assets/work/w4.jpg', title: 'Marketing Website', sub: 'Conversion-focused landing experience', tags: ['Website', 'Landing', 'Branding'] },
-  { img: '/assets/work/w3.jpg', title: 'E-Learning Platform', sub: 'Course discovery & learning UI', tags: ['Website', 'EdTech', 'UI'] },
+  {
+    img: '/assets/work/w3.jpg',
+    title: 'E-Learning Platform',
+    sub: 'A centralized hub for digital, self-paced learning.',
+    desc: 'Conceptualized and developed an interactive E-Learning Platform during my academic tenure, aimed at digitizing and organizing educational resources. It serves as a centralized hub for comprehensive study materials, conceptual notes and reference guides — designed with a user-centric approach to deepen understanding of complex subjects and promote structured, self-paced digital learning.',
+    tags: ['Website', 'EdTech', 'UI'],
+  },
 ]
 
 const LOGOS = [
@@ -49,7 +55,7 @@ export default function Work() {
 
       <div className="work__grid">
         {PROJECTS.map((p, i) => (
-          <Card key={p.title} title={p.title} sub={p.sub} tags={p.tags} delay={i * 80}>
+          <Card key={p.title} title={p.title} sub={p.sub} desc={p.desc} tags={p.tags} delay={i * 80}>
             <div className="work-card__shot">
               <img src={p.img} alt={p.title} loading="lazy" />
             </div>
