@@ -10,7 +10,7 @@ const PROJECTS = [
 
 const LOGOS = [
   { img: '/logo/anaira-wordmark.png', title: 'Anaira — Brand Identity', tags: ['Branding', 'Logo', 'Identity'] },
-  { img: '/logo/anaira-mark.png', title: 'Anaira — Logo Mark', tags: ['Logo Design', 'Icon', 'Brand Mark'] },
+  { img: '/logo/anaira-mark.png', title: 'Zyps — Startup Logo', tags: ['Logo Design', 'Icon', 'Brand Mark'] },
 ]
 
 function Card({ children, title, tags, delay }) {
